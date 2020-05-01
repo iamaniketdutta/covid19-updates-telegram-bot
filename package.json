@@ -1,0 +1,33 @@
+{
+  "name": "covid19-updates-telegram-bot",
+  "version": "1.0.0",
+  "description": "This is a Telegram Bot which will provides updates about COVID-19 in India & other miscellaneous features",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.7",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "telegraf": "^3.36.0",
+    "telegraf-command-parts": "^1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamaniketdutta/covid19-updates-telegram-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamaniketdutta/covid19-updates-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/iamaniketdutta/covid19-updates-telegram-bot#readme",
+  "keywords": [],
+  "author": "Aniket Dutta <iamaniketdutta@gmail.com>",
+  "license": "ISC"
+}
