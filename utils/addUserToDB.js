@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const telegramBotUserDb = require('../dbHandlers/telegramBotUserDb');
 
 module.exports = (id, username, first_name, last_name,latitude, longitude, isBot, callback) => {

@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const moment = require('moment');
 const _ = require('lodash');
-
+const config = require('../configs/config');
 const getRawBody = require('./getRawBody');
 
 
@@ -9,7 +9,7 @@ module.exports = async () => {
     let stateData = [];
 
     try {
-        const html = await getRawBody(process.env.DATA_BASE_URL);
+        const html = await getRawBody(config.DATA_BASE_URL);
         const $ = cheerio.load(html);
 
         const table = $('div.data-table table');

@@ -16,9 +16,9 @@ cd covid19-updates-telegram-bot
 npm install
 ```
 
-### Update the env file
+### Update the configuration file/s
 ```bash
-Change the secured key 
+It will be inside configs/telegram_bot_live.json
 ```
 
 ### Start the application

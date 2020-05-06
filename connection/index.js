@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 const Telegraf = require('telegraf');
+const config = require('../configs/config');
 
 exports.configureMongoClient = ()=>{
 //mongo connection
 // Create the database connection
-    mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+    mongoose.connect(config.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // CONNECTION EVENTS
 // When successfully connected
     mongoose.connection.on('connected', function () {
-        console.log('Mongoose default connection open to ' + process.env.DB_URL + ' and time is ' + new Date());
+        console.log('Mongoose default connection open to ' + config.DB_URL + ' and time is ' + new Date());
     });
 
 // If the connection throws an error
@@ -24,6 +25,6 @@ exports.configureMongoClient = ()=>{
 }
 
 exports.configureTelegramBot = ()=>{
-    return new Telegraf(process.env.TELEGRAM_TOKEN);
+    return new Telegraf(config.TELEGRAM_TOKEN);
 }
 

@@ -1,5 +1,6 @@
 const request = require('request-promise')
 const moment = require('moment')
+const config = require('../configs/config');
 
 module.exports = async () => {
     try {
@@ -8,7 +9,7 @@ module.exports = async () => {
             qs: {
                 q: 'corona',
                 sources: 'google-news-in',
-                apiKey: process.env.NEWS_API_KEY,
+                apiKey: config.NEWS_API_KEY,
             },
             headers: {
                 'User-Agent': 'Request-Promise'

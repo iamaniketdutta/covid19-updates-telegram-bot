@@ -12,6 +12,8 @@ const getRawBody = require('./utils/getRawBody');
 const commandParts = require('telegraf-command-parts');
 const { configureMongoClient, configureTelegramBot} = require('./connection/index');
 const resource = require('./utils/resource.js');
+const config = require('./configs/config');
+
 configureMongoClient();
 
 const bot = configureTelegramBot();
@@ -33,7 +35,7 @@ bot.launch()
                         }
                     }, (err) => {
                         if (!err){
-                            bot.telegram.sendMessage(process.env.ADMIN_CHAT_ID, 'New featured updates sent successfully');
+                            bot.telegram.sendMessage(config.ADMIN_CHAT_ID, 'New featured updates sent successfully');
                         }
                     });
                 }
@@ -92,7 +94,7 @@ const shouldAcknowledgeAdmin = (ctx, command) => {
     }
     const { id } = chat;
 
-    if (id.toString() !== process.env.ADMIN_CHAT_ID && username !== 'iamaniketdutta') {
+    if (id.toString() !== config.ADMIN_CHAT_ID && username !== 'iamaniketdutta') {
         try{
             acknowledgeAdmin(username, first_name, last_name, command);
             addUserToDB(id, username, first_name, last_name,latitude, longitude, is_bot, function (response) {
@@ -185,8 +187,8 @@ bot.command('/feedback', async(ctx,match) => {
         await ctx.replyWithHTML('<b>Thank You 🙏, '
             + username +
             ' !!!</b>\n\nYour Feedback has been saved.\nWe will look into this & get back to you ASAP.');
-        if (ctx.message.from.id !== process.env.ADMIN_CHAT_ID){
-            await bot.telegram.sendMessage(process.env.ADMIN_CHAT_ID, 'User: '+username+' has sent this feedback : ' + feedbackMsg);
+        if (ctx.message.from.id !== config.ADMIN_CHAT_ID){
+            await bot.telegram.sendMessage(config.ADMIN_CHAT_ID, 'User: '+username+' has sent this feedback : ' + feedbackMsg);
         }
     }catch (e) {
         console.log('Error in /feedback: ', e);
