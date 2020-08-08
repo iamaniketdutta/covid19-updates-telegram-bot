@@ -159,16 +159,16 @@ bot.on('location', async(ctx)=>{
     try {
         shouldAcknowledgeAdmin(ctx, 'location');
         await ctx.replyWithHTML(resource.botlocationMessage);
-       /* await ctx.replyWithHTML('Fetching the nearest case. Please wait !!!\n\n💡 It might take some time.');
-        shouldAcknowledgeAdmin(ctx, 'location');
-        const location = ctx.message.location;
-        const latitude = location.latitude || '';
-        const longitude = location.longitude || '';
-        const url = 'https://script.google.com/macros/s/AKfycbwqcrVhD9D6Oi2aIi9EG16ks3hLjbJqag_jznwxqpY88xdoBQun/exec?lat=' + latitude + '&long=' + longitude;
-        let distInKm = await getRawBody(url) || '';
-        distInKm = Math.round((Number(distInKm) + Number.EPSILON) * 100) / 100;
-        await ctx.replyWithHTML('📍 You are <b>Approximately ' + distInKm + ' KM</b>' + ' away from the nearest confirmed case <b>*</b>' +
-            '\n\n<b>*</b> This information is sourced from crowdsource data and can be inaccurate. Don\'t panic, there might be +/- 5km error in some cases & wait for government sources to verify this data.');*/
+        /* await ctx.replyWithHTML('Fetching the nearest case. Please wait !!!\n\n💡 It might take some time.');
+         shouldAcknowledgeAdmin(ctx, 'location');
+         const location = ctx.message.location;
+         const latitude = location.latitude || '';
+         const longitude = location.longitude || '';
+         const url = 'https://script.google.com/macros/s/AKfycbwqcrVhD9D6Oi2aIi9EG16ks3hLjbJqag_jznwxqpY88xdoBQun/exec?lat=' + latitude + '&long=' + longitude;
+         let distInKm = await getRawBody(url) || '';
+         distInKm = Math.round((Number(distInKm) + Number.EPSILON) * 100) / 100;
+         await ctx.replyWithHTML('📍 You are <b>Approximately ' + distInKm + ' KM</b>' + ' away from the nearest confirmed case <b>*</b>' +
+             '\n\n<b>*</b> This information is sourced from crowdsource data and can be inaccurate. Don\'t panic, there might be +/- 5km error in some cases & wait for government sources to verify this data.');*/
     }catch (e) {
         console.log('Error in location: ', e);
         await ctx.reply('Sorry, cannot find the nearest case at the moment. Try again later or report the problem to @iamaniketdutta');
@@ -353,9 +353,9 @@ bot.hears('📅 Today\'s Status', async (ctx)=>{
             const deathCases = latestCase.deltadeaths;
             const lastUpdatedTime = latestCase.lastupdatedtime;
             const output = 'Today\'s reported case -  <b>PAN India</b>\n\nLast Updated: '+lastUpdatedTime + '\n\n' +
-            'Confirmed cases: <b>' + confirmesCases + '</b>\n' +
-            'Recovered cases: <b>' + recoveredCases + '</b>\n' +
-            'Death cases: <b>' + deathCases + '</b>\n';
+                'Confirmed cases: <b>' + confirmesCases + '</b>\n' +
+                'Recovered cases: <b>' + recoveredCases + '</b>\n' +
+                'Death cases: <b>' + deathCases + '</b>\n';
 
             await ctx.replyWithHTML(output);
         } else {
@@ -505,21 +505,9 @@ bot.on('text', async (ctx) => {
         if (ctx.message.text.length < 3 && message > 0 && message < stateData.length) {
             const title = stateData[0];
             let output = '';
-            let totalConfirmedCases = 0;
-            let totalCuredCases = 0;
-            let totalDeathCases = 0;
-            let stateWideActiveCase = 0;
             for (let i = 0; i < title.length; i++){
                 output += title[i] + ': <b>' + stateData[message][i] + '</b>\n\n' ;
-                totalConfirmedCases = Number(stateData[message][1]);
-                totalCuredCases = Number(stateData[message][2]);
-                totalDeathCases = Number(stateData[message][3]);
             }
-            stateWideActiveCase = totalConfirmedCases - totalCuredCases - totalDeathCases;
-            if (stateWideActiveCase < 1) {
-                stateWideActiveCase = 0;
-            }
-            output += `Active cases: <b>${stateWideActiveCase}</b> \n\n`;
             await ctx.replyWithHTML(output);
         } else {
             await ctx.replyWithHTML(`Sorry, I am an automated system & didn't understand your reply.\n\nPlease use the <b>/info</b> command to check the features provided by me.\n\n💡 Click on the [4 dot] icon below if the menu items are hidden`);
