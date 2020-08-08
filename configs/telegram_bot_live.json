@@ -1,5 +1,5 @@
 {
-  "DATA_BASE_URL": "https://www.mohfw.gov.in/",
+  "DATA_BASE_URL": "https://api.covid19india.org/data.json",
   "DB_URL": "mongodb://localhost:27017/covid19",
   "TELEGRAM_TOKEN": "YOUR_TELEGRAM_BOT_TOKEN",
   "ADMIN_CHAT_ID": "YOUR_ADMIN_CHAT_ID",
