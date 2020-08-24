@@ -45,5 +45,5 @@ If you encounter any problems feel free to open an [issue](https://github.com/ia
 * News Data from - [News API](https://newsapi.org/)
 
 ## 👦🏼 Find me here
-* [Linkedin](https://www.linkedin.com/in/anik1505)
+* [Linkedin](https://www.linkedin.com/in/iamaniketdutta)
 * [Nyoboo](https://nyoboo.com/profiles/aniket-dutta)
