@@ -178,5 +178,5 @@ exports.aboutDeveloper = 'Hello, I\'m Aniket Dutta.\n\n' +
     'You can find me at:' +
     '\nTelegram: [https://t.me/iamaniketdutta](https://t.me/iamaniketdutta)\n\n' +
     'Nyoboo: [https://nyoboo.com/profiles/aniket-dutta](https://nyoboo.com/profiles/aniket-dutta)\n\n' +
-    'LinkedIn: [https://linkedin.com/in/anik1505](https://linkedin.com/in/anik1505)\n\n' +
+    'LinkedIn: [https://linkedin.com/in/iamaniketdutta](https://linkedin.com/in/iamaniketdutta)\n\n' +
     'Github: [https://github.com/iamaniketdutta](https://github.com/iamaniketdutta)';
