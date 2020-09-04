@@ -1,5 +1,6 @@
 # COVID-19 Updates Telegram Bot
-This is a Telegram Bot which will provides updates about COVID-19 in India & other miscellaneous features
+This is a Telegram Bot which will provides updates about COVID-19 in India & other miscellaneous features.
+The public link to use this bot: https://t.me/aniket_covid19_bot
 
 
 ## Run the App Locally
